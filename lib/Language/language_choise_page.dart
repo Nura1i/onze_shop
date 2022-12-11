@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:flutter/foundation.dart';
+import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:onze_shop/DetailPages/Detail.dart';
@@ -15,27 +15,16 @@ class language_choice extends StatefulWidget {
 String lan = 'def';
 
 class _language_choiceState extends State<language_choice> {
-  Color col = Color.fromARGB(255, 133, 104, 104);
+  Color col = const Color.fromARGB(255, 133, 104, 104);
   Color uz = Colors.grey;
   Color rus = Colors.grey;
   String tx = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 223, 223, 223),
+      backgroundColor: const Color.fromARGB(255, 223, 223, 223),
       body: Column(
         children: [
-          // Container(
-          //     margin: EdgeInsets.only(top: 50),
-          //     alignment: Alignment.center,
-          //     child:const Text(
-          //       'Tilni Tanglang',
-          //       style: TextStyle(
-          //           color: Color.fromARGB(255, 0, 29, 52),
-          //           fontSize: 27,
-          //           fontWeight: FontWeight.bold,
-          //           letterSpacing: 2),
-          //     )),
           Row(
             children: [
               Padding(
@@ -43,7 +32,7 @@ class _language_choiceState extends State<language_choice> {
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      rus = Color.fromARGB(255, 10, 79, 135);
+                      rus = const Color.fromARGB(255, 10, 79, 135);
                       uz = Colors.grey;
                       tx = 'Вперёд';
                       lan = 'rus';
@@ -53,8 +42,35 @@ class _language_choiceState extends State<language_choice> {
                     height: 150,
                     width: 130,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Color.fromARGB(255, 247, 247, 247)),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Color.fromARGB(255, 226, 92, 82),
+                            blurRadius: 3,
+                            spreadRadius: 2,
+                            offset: Offset(
+                              2.0,
+                              2.0,
+                            )),
+                        BoxShadow(
+                            color: Color.fromARGB(255, 6, 4, 50),
+                            blurRadius: 10,
+                            spreadRadius: 2.0,
+                            offset: Offset(
+                              3.0,
+                              3.0,
+                            )),
+                        BoxShadow(
+                            color: Color.fromARGB(255, 6, 4, 50),
+                            blurRadius: 3,
+                            spreadRadius: 0.3,
+                            offset: Offset(
+                              -1.0,
+                              -1.0,
+                            ))
+                      ],
+                      borderRadius: BorderRadius.circular(31),
+                      color: const Color.fromARGB(255, 247, 247, 247),
+                    ),
                     child: Column(
                       children: [
                         Padding(
@@ -91,7 +107,7 @@ class _language_choiceState extends State<language_choice> {
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      uz = Color.fromARGB(255, 10, 79, 135);
+                      uz = const Color.fromARGB(255, 10, 79, 135);
                       rus = Colors.grey;
                       tx = 'Oldinga';
                       lan = 'uz';
@@ -101,8 +117,38 @@ class _language_choiceState extends State<language_choice> {
                     height: 150,
                     width: 130,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Color.fromARGB(255, 247, 247, 247)),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.red,
+                            blurRadius: 1,
+                            spreadRadius: 3,
+                            offset: Offset(
+                              1.0,
+                              1.0,
+                            )),
+                        BoxShadow(
+                            color: Colors.green,
+                            blurRadius: 5,
+                            spreadRadius: 2.0,
+                            offset: Offset(
+                              3.0,
+                              3.0,
+                            )),
+                        BoxShadow(
+                            color: Colors.blue,
+                            blurRadius: 3,
+                            spreadRadius: 0.3,
+                            offset: Offset(
+                              -1.0,
+                              -1.0,
+                            ))
+                      ],
+                      borderRadius: BorderRadius.circular(31),
+                      color: const Color.fromARGB(255, 247, 247, 247),
+                    ),
+                    // decoration: BoxDecoration(
+                    //     borderRadius: BorderRadius.circular(20),
+                    //     color: Color.fromARGB(255, 247, 247, 247)),
                     child: Column(
                       children: [
                         Padding(
@@ -128,7 +174,7 @@ class _language_choiceState extends State<language_choice> {
                               color: Color.fromARGB(255, 0, 42, 115),
                               fontSize: 20,
                               fontWeight: FontWeight.bold),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -154,6 +200,10 @@ class _language_choiceState extends State<language_choice> {
               ),
             ],
           ),
+          Container(
+            child: Lottie.network(
+                'https://assets2.lottiefiles.com/packages/lf20_q2qsp9yg.json'),
+          )
         ],
       ),
       floatingActionButton: Padding(
@@ -168,26 +218,53 @@ class _language_choiceState extends State<language_choice> {
           },
           child: Container(
             width: double.infinity,
-            height: 60,
-            margin: EdgeInsets.only(left: 40, right: 10),
+            height: MediaQuery.of(context).size.height * 0.05,
+            margin: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width * 0.1,
+                right: MediaQuery.of(context).size.width * 0.03),
             alignment: Alignment.center,
+
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Color.fromARGB(255, 23, 92, 213),
-                gradient: const LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color.fromARGB(255, 75, 153, 217),
-                      Color.fromARGB(255, 13, 72, 174),
-                      Color.fromARGB(255, 8, 66, 114)
-                    ])),
+              gradient: const LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color.fromARGB(255, 15, 56, 90),
+                    Color.fromARGB(255, 13, 72, 174),
+                    Color.fromARGB(255, 8, 66, 114)
+                  ]),
+              boxShadow: const [
+                BoxShadow(
+                    color: Color.fromARGB(255, 15, 56, 90),
+                    blurRadius: 0,
+                    spreadRadius: 2,
+                    offset: Offset(
+                      3.0,
+                      3.0,
+                    )),
+                BoxShadow(
+                    color: Color.fromARGB(255, 10, 57, 96),
+                    blurRadius: 3,
+                    spreadRadius: 0.3,
+                    offset: Offset(
+                      2.0,
+                      2.0,
+                    ))
+              ],
+              borderRadius: BorderRadius.circular(31),
+              color: const Color.fromARGB(255, 247, 247, 247),
+            ),
             child: Text(
               tx,
               style: GoogleFonts.robotoMono(
-                  color: Color.fromARGB(255, 167, 190, 220),
-                  fontSize: 27,
-                  fontWeight: FontWeight.bold),
+                  color: Color.fromARGB(255, 176, 198, 226),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  shadows: [
+                    const Shadow(
+                        color: Color.fromARGB(255, 15, 56, 90),
+                        offset: Offset(2, 2))
+                  ]),
             ),
           ),
         ),
@@ -195,5 +272,3 @@ class _language_choiceState extends State<language_choice> {
     );
   }
 }
-
-
