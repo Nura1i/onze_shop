@@ -223,7 +223,6 @@ class _language_choiceState extends State<language_choice> {
                 left: MediaQuery.of(context).size.width * 0.1,
                 right: MediaQuery.of(context).size.width * 0.03),
             alignment: Alignment.center,
-
             decoration: BoxDecoration(
               gradient: const LinearGradient(
                   begin: Alignment.topRight,
